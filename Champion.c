@@ -93,7 +93,7 @@ void CHAMPION_loseHealth(champion *champ, int damage)
     {
       /* Champ is magical, immune to damage, do nothing */
     }
-    else  if( damage > 0 )
+    else  if( 0 == damage )
     {
       /* inflicted damage = 0 , do nothing */
     }
@@ -105,7 +105,7 @@ void CHAMPION_loseHealth(champion *champ, int damage)
       if(champ->health < max_helath)
       {
         /* champ health has been damaged before, check last damage time */
-        if( ((double) 3600) < getTimeSince(champ->lastCrossTimeStamp) )
+        if( ((double) 3600) > getTimeSince(champ->lastCrossTimeStamp) )
         {
           /* champ health has been damaged less than an hour ago, do nothing */
         }
