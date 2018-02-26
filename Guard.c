@@ -69,7 +69,7 @@ int GUARD_getCurrentDamagePower()
   int index;
   guard_cfg guard;
   weekDay day = getCurrentWeekDay();
-  char damage = 0;
+  int damage = 0;
 
   if((Tue == day) || (Thu == day))
   {
@@ -137,7 +137,7 @@ char isGuardActive(guard_cfg guard)
   endTime = mktime(&guard.timeWindowEnd);
 
   /* check if current time fals within guard time window */
-  if( (currentTime >= startTime) & (currentTime <= endTime) )
+  if( (currentTime >= startTime) && (currentTime <= endTime) )
   {
     return 1;
   }
@@ -146,4 +146,3 @@ char isGuardActive(guard_cfg guard)
     return 0;
   }
 }
-
